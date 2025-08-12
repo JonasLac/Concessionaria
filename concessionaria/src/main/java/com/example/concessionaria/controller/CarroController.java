@@ -1,7 +1,7 @@
 package com.example.concessionaria.controller;
 
-import com.example.concessionaria.car.Car;
-import com.example.concessionaria.car.CarRepository;
+import com.example.concessionaria.model.Carro;
+import com.example.concessionaria.repository.CarroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,13 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("car")
-public class CarController {
+public class CarroController {
     // controle de acesso aos carros
     @Autowired
-    private CarRepository repository;
+    private CarroRepository repository;
     @GetMapping
-    public List<Car> getAll(){
-        List<Car> carList = repository.findAll();
+    public List<Carro> getAll(){
+        List<Carro> carList = repository.findAll();
         return carList;
     }
 
